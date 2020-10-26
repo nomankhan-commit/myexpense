@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<% include ../header/header %>
+
+<body>
+        <input type="hidden" value='<%= buff %>' id="array">
+        <input type="hidden" value='<%= categories_ %>' id="category">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <% include ../nav/nav %>
+            </div> 
+        </div>
+        <div class="row">
+            <% include ../etc/second_nav %>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                    <input type="checkbox" checked data-toggle="toggle" data-size="sm">
+                <% include ../forms/form_plus %>
+                
+                
+            </div>
+            <div class="col-md-6">
+                <% include ../forms/form_minus %>
+            </div>
+           
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+
+            </div>
+            <div class="col-md-6">
+                <div class="card-columns">
+                    <div class="card bg-light">
+                        <div class="card-body text-center">
+                            <p class="card-text">Net Amount: </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+  
+    <% include ../footer/footer %>

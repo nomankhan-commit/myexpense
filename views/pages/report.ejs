@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<% include ../header/header %>
+
+<body>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <% include ../nav/nav %>
+            </div>
+        </div>
+        <div class="row">
+            <% include ../etc/second_nav %>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <input type="checkbox" checked data-toggle="toggle" data-size="sm">
+                <h3 id="report_heading">Expense Report</h3>
+                <div class="form-group">
+
+                    <select class="form-control" id="exampleFormControlSelect1">
+                        <option>Filter</option>
+                        <% for (var i = 0; i < categories_.length; i++) { %>
+                        <option onchange="option_id(this)" id="<%= categories_[i].id %>">
+                            <%= categories_[i].categories %></option>
+
+                        <% } %>
+
+                    </select>
+                </div>
+                <table id="myTable" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">S #</th>
+                            <th scope="col">Purchase</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Amount</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <span id="span_">
+                            <% for (var i = 0; i < db_restult.length; i++) { %>
+
+                            <tr>
+                                <td><%= db_restult[i].amount_id %></td>
+                                <td><%= db_restult[i].things %></td>
+                                <td><%= db_restult[i].description %></td>
+                                <td><%= db_restult[i].amount %></td>
+                                <td>
+
+                                    <button type="button" class="btndelete btnDelete"
+                                        id="<%= db_restult[i].thing_id %>">Delete</button>
+                                    <button type="button" class="btndelete btnDelete"
+                                        id="<%= db_restult[i].thing_id %>">Update</button>
+
+                                </td>
+                            </tr>
+                            <% } %>
+                        </span>
+                    </tbody>
+                </table>
+
+
+
+            </div>
+            <!-- <div class="col-md-6">
+               
+            </div> -->
+
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+
+            </div>
+            <div class="col-md-6">
+                <div class="card-columns">
+                    <div class="card bg-light">
+                        <div class="card-body text-center">
+                            <p class="card-text">Net Amount: </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- final tag -->
+    </div>
+
+
+
+    <% include ../footer/footer %>
